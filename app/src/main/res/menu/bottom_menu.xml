@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomHome"
+        android:icon="@drawable/baseline_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/bottomBooking"
+        android:icon="@drawable/baseline_credit_card"
+        android:title="@string/addNew" />
+
+    <item
+        android:id="@+id/bottomFavor"
+        android:icon="@drawable/baseline_favorite"
+        android:title="@string/favorite" />
+
+    <item
+        android:id="@+id/bottomProfile"
+        android:icon="@drawable/baseline_supervised"
+        android:title="@string/info" />
+</menu>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="44dp">
+
+    <TextView
+        android:id="@+id/tvExplore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/explore"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_location"
+        app:layout_constraintEnd_toStartOf="@id/tvLocation"
+        app:layout_constraintTop_toTopOf="@id/tvLocation"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aspenUsa"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/ivArrowDown"
+        app:layout_constraintTop_toTopOf="@id/ivArrowDown" />
+
+    <ImageView
+        android:id="@+id/ivArrowDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvExplore"
+        app:layout_constraintBottom_toBottomOf="@id/tvExplore"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tvLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aspen"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvExplore" />
+
+
+    <EditText
+        android:id="@+id/edtDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        android:autofillHints="@string/find_thing_to_do"
+        android:background="@drawable/edit_text_background"
+        android:drawableStart="@drawable/baseline_search_24"
+        android:hint="@string/find_thing_to_do"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColorHint="@color/grayText"
+        app:layout_constraintTop_toBottomOf="@id/tvLogo"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/edtDashboard"
+        app:tabMinWidth="89dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/primary"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPageHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayoutHome" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

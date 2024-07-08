@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AspenBase</string>
+    <string name="aspen">Aspen</string>
+    <string name="planYour">Plan your</string>
+    <string name="luxuriousVacation">Luxurious Vacation</string>
+    <string name="explore">Explore</string>
+    <string name="action_settings">Settings</string>
+    <string name="homeLabel">Home Page</string>
+    <string name="large_text">Large text</string>
+    <string name="addNew">Add New</string>
+    <string name="home">Home</string>
+    <string name="info">Info</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aspenUsa">Aspen, USA</string>
+    <string name="find_thing_to_do">Find thing to do</string>
+    <string name="popular">Popular</string>
+    <string name="see_all">See All</string>
+    <string name="alley_palace">Alley Palace</string>
+    <string name="recommended">Recommended</string>
+
+
+
+
+</resources>
