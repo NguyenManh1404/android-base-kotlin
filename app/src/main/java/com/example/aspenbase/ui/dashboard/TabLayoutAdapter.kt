@@ -1,14 +1,14 @@
-package com.example.aspenbase.ui.main.adapter
+package com.example.aspenbase.ui.dashboard
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.aspenbase.ui.main.fragment.AdventureFragment
-import com.example.aspenbase.ui.main.fragment.FoodFragment
-import com.example.aspenbase.ui.main.fragment.HotelFragment
-import com.example.aspenbase.ui.main.fragment.LocationFragment
-import com.example.aspenbase.ui.main.fragment.VisitFragment
+import com.example.aspenbase.ui.dashboard.fragment.AdventureFragment
+import com.example.aspenbase.ui.dashboard.fragment.FoodFragment
+import com.example.aspenbase.ui.dashboard.fragment.HotelFragment
+import com.example.aspenbase.ui.dashboard.fragment.LocationFragment
+import com.example.aspenbase.ui.dashboard.fragment.VisitFragment
 
 class TabLayoutAdapter(
     fragmentManager: FragmentManager,

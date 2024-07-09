@@ -1,12 +1,11 @@
-package com.example.aspenbase.ui.main.adapter
+package com.example.aspenbase.ui.dashboard
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aspenbase.R
+import com.example.aspenbase.data.CardItem
 import com.example.aspenbase.databinding.ItemPopularBinding
 
 class CardAdapter(private val cardItemList: List<CardItem>) :
@@ -69,37 +68,37 @@ RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
     }
 }
 
-data class CardItem(
-    val imageRes: Int,
-    val title: String,
-    val rating: Double,
-    var isFavorite: Boolean = false
-) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString() ?: "",
-        parcel.readDouble(),
-        parcel.readByte() != 0.toByte()
-    )
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(imageRes)
-        parcel.writeString(title)
-        parcel.writeDouble(rating)
-        parcel.writeByte(if (isFavorite) 1 else 0)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<CardItem> {
-        override fun createFromParcel(parcel: Parcel): CardItem {
-            return CardItem(parcel)
-        }
-
-        override fun newArray(size: Int): Array<CardItem?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+//data class CardItem(
+//    val imageRes: Int,
+//    val title: String,
+//    val rating: Double,
+//    var isFavorite: Boolean = false
+//) : Parcelable {
+//    constructor(parcel: Parcel) : this(
+//        parcel.readInt(),
+//        parcel.readString() ?: "",
+//        parcel.readDouble(),
+//        parcel.readByte() != 0.toByte()
+//    )
+//
+//    override fun writeToParcel(parcel: Parcel, flags: Int) {
+//        parcel.writeInt(imageRes)
+//        parcel.writeString(title)
+//        parcel.writeDouble(rating)
+//        parcel.writeByte(if (isFavorite) 1 else 0)
+//    }
+//
+//    override fun describeContents(): Int {
+//        return 0
+//    }
+//
+//    companion object CREATOR : Parcelable.Creator<CardItem> {
+//        override fun createFromParcel(parcel: Parcel): CardItem {
+//            return CardItem(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<CardItem?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
+//}

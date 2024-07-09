@@ -13,12 +13,12 @@
         android:theme="@style/Theme.AspenBase"
         tools:targetApi="31">
         <activity
-            android:name=".ui.main.HomeActivity"
+            android:name=".ui.HomeActivity"
             android:exported="false"
             android:label="@string/homeLabel"
             android:theme="@style/Theme.AspenBase.NoActionBar" />
         <activity
-            android:name=".ui.init.MainActivity"
+            android:name=".ui.tutorial.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

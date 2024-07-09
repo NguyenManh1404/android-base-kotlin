@@ -1,4 +1,4 @@
-package com.example.aspenbase.ui.main.fragment
+package com.example.aspenbase.ui.dashboard.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.aspenbase.R
 
 
-class FoodFragment : Fragment() {
+class AdventureFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class FoodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food, container, false)
+        return inflater.inflate(R.layout.fragment_adventure, container, false)
     }
 
 

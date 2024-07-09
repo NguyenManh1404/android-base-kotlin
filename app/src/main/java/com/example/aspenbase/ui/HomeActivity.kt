@@ -1,16 +1,16 @@
-package com.example.aspenbase.ui.main
+package com.example.aspenbase.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.aspenbase.R
+import com.example.aspenbase.data.CardItem
 import com.example.aspenbase.databinding.ActivityHomeBinding
-import com.example.aspenbase.ui.main.adapter.CardItem
-import com.example.aspenbase.ui.main.detail.DetailFragment
-import com.example.aspenbase.ui.main.fragment.BookingFragment
-import com.example.aspenbase.ui.main.fragment.DashboardFragment
-import com.example.aspenbase.ui.main.fragment.FavoriteFragment
-import com.example.aspenbase.ui.main.fragment.ProfileFragment
+import com.example.aspenbase.ui.detail.DetailFragment
+import com.example.aspenbase.ui.booking.BookingFragment
+import com.example.aspenbase.ui.dashboard.DashboardFragment
+import com.example.aspenbase.ui.favorite.FavoriteFragment
+import com.example.aspenbase.ui.profile.ProfileFragment
 
 
 class HomeActivity : AppCompatActivity() {

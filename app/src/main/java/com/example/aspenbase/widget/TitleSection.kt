@@ -1,4 +1,4 @@
-package com.example.aspenbase.ui.widget
+package com.example.aspenbase.widget
 
 import android.content.Context
 import android.util.AttributeSet

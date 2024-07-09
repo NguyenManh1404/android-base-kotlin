@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.aspenbase.ui.widget.TitleSection
+    <com.example.aspenbase.widget.TitleSection
         android:id="@+id/layoutSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutSection"
         tools:listitem="@layout/item_popular" />
 
-    <com.example.aspenbase.ui.widget.TitleSection
+    <com.example.aspenbase.widget.TitleSection
         android:id="@+id/layoutSectionNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,16 +1,15 @@
-package com.example.aspenbase.ui.main.detail
+package com.example.aspenbase.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.aspenbase.R
+import com.example.aspenbase.data.CardItem
 import com.example.aspenbase.databinding.FragmentDetailBinding
-import com.example.aspenbase.ui.main.HomeActivity
-import com.example.aspenbase.ui.main.adapter.CardItem
+import com.example.aspenbase.ui.HomeActivity
 
 
 class DetailFragment : Fragment() {
@@ -28,12 +27,21 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initView()
+        initListener()
+    }
+
+
+    private fun initListener() {
         binding?.imageButtonBack?.setOnClickListener {
             (activity as HomeActivity).run {
                 parentFragmentManager.popBackStack()
             }
         }
 
+    }
+
+    private  fun initView (){
         arguments?.let { bundle ->
             val title = bundle.getString("title")
             val imageRes = bundle.getInt("imageRes")

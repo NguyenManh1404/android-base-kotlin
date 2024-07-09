@@ -1,10 +1,10 @@
-package com.example.aspenbase.ui.init
+package com.example.aspenbase.ui.tutorial
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.aspenbase.databinding.ActivityMainBinding
-import com.example.aspenbase.ui.main.HomeActivity
+import com.example.aspenbase.ui.HomeActivity
 
 class MainActivity : AppCompatActivity(){
 
@@ -16,7 +16,6 @@ private val binding get() = _binding
         setContentView(binding?.root)
 
         binding?.btnExplore?.setOnClickListener {
-            // Toast.makeText(this@MainActivity, "Its a toast!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, HomeActivity::class.java).apply {
             })
         }

@@ -7,7 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="homeLabel">Home Page</string>
     <string name="large_text">Large text</string>
-    <string name="addNew">Add New</string>
+    <string name="booking">Booking</string>
     <string name="home">Home</string>
     <string name="info">Info</string>
     <string name="favorite">Favorite</string>
@@ -19,8 +19,9 @@
     <string name="see_all">See All</string>
     <string name="alley_palace">Alley Palace</string>
     <string name="recommended">Recommended</string>
-
-
-
-
+    <string name="location">Location</string>
+    <string name="hotel">Hotel</string>
+    <string name="food">Food</string>
+    <string name="adventure">Adventure</string>
+    <string name="visit">Visit</string>
 </resources>

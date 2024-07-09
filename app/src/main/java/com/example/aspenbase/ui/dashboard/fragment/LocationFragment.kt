@@ -1,8 +1,6 @@
-package com.example.aspenbase.ui.main.fragment
+package com.example.aspenbase.ui.dashboard.fragment
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aspenbase.R
+import com.example.aspenbase.data.CardItem
 import com.example.aspenbase.databinding.FragmentLocationBinding
-import com.example.aspenbase.ui.main.HomeActivity
-import com.example.aspenbase.ui.main.adapter.CardAdapter
-import com.example.aspenbase.ui.main.adapter.CardItem
-import com.example.aspenbase.ui.main.detail.DetailFragment
+import com.example.aspenbase.ui.HomeActivity
+import com.example.aspenbase.ui.dashboard.CardAdapter
 
 
 class LocationFragment : Fragment() {
@@ -36,6 +33,11 @@ class LocationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initView()
+        initListener()
+    }
+
+    private fun initView() {
         popularList.run {
             add(CardItem(R.drawable.img_danang, "Home Stay", 4.1, true))
             add(CardItem(R.drawable.bg_welcome, "Alley Place", 5.0, true))
@@ -55,8 +57,6 @@ class LocationFragment : Fragment() {
         }
 
         myAdapter?.notifyDataSetChanged()
-
-        initListener()
     }
 
 
