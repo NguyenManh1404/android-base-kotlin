@@ -1,12 +1,14 @@
 package com.example.aspenbase.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.aspenbase.R
 import com.example.aspenbase.data.CardItem
 import com.example.aspenbase.databinding.ActivityHomeBinding
-import com.example.aspenbase.ui.detail.DetailFragment
+import com.example.aspenbase.ui.dashboard.detail.DetailFragment
 import com.example.aspenbase.ui.booking.BookingFragment
 import com.example.aspenbase.ui.dashboard.DashboardFragment
 import com.example.aspenbase.ui.favorite.FavoriteFragment
@@ -64,4 +66,10 @@ class HomeActivity : AppCompatActivity() {
             .addToBackStack("home")
             .commit()
     }
+    companion object {
+        fun createIntent(context: Context): Intent {
+            return Intent(context, HomeActivity::class.java)
+        }
+    }
+
 }

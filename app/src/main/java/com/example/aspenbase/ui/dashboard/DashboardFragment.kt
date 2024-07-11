@@ -1,7 +1,11 @@
 package com.example.aspenbase.ui.dashboard
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -63,9 +67,11 @@ class DashboardFragment : Fragment() {
 
             viewPageHome.let {
                 TabLayoutMediator(tabLayoutHome, it) { tab, position ->
-                    tab.text = getTabTitle(requireContext(),position) // Replace with your tab title logic
+                    tab.text = getTabTitle(position) // Replace with your tab title logic
                 }.attach()
             }
+
+//            tvExplore.text = setBoldSpannable("Hello world to day, I am a bestfriend")
         }
     }
 
@@ -78,19 +84,34 @@ class DashboardFragment : Fragment() {
             viewPageHome.adapter = adapter
             // Add tabs dynamically based on adapter count
             for (i in 0 until (adapter?.itemCount ?: 0)) {
-                tabLayoutHome.addTab(tabLayoutHome.newTab().setText(getTabTitle(requireContext(),i)))
+                tabLayoutHome.addTab(tabLayoutHome.newTab().setText(getTabTitle(i)))
             }
         }
     }
 
-    private fun getTabTitle(context: Context,position: Int): String {
+    private fun getTabTitle(position: Int): String {
         return when (position) {
-            0 -> context.getString(R.string.location)
-            1 -> context.getString(R.string.hotel)
-            2 -> context.getString(R.string.food)
-            3 -> context.getString(R.string.adventure)
-            4 -> context.getString(R.string.visit)
-            else -> "Tab $position"
+            0 -> getString(R.string.location)
+            1 -> getString(R.string.hotel)
+            2 -> getString(R.string.food)
+            3 -> getString(R.string.adventure)
+            4 -> getString(R.string.visit)
+            else -> getString(R.string.tabPosition, position)
         }
     }
+
+    private fun setBoldSpannable(myText: String): SpannableString {
+        var truncatedText = if (myText.length > 20) {
+            myText.substring(0, 100) + "..."
+        } else {
+            myText
+        }
+//
+//        val spannableContent = SpannableString(truncatedText)
+//        spannableContent.setSpan(StyleSpan(Typeface.BOLD), 0, truncatedText.length / 2, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+        val spannableContent = SpannableString(truncatedText)
+        return spannableContent
+    }
+
+
 }

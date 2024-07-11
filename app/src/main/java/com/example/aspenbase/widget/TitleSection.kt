@@ -18,18 +18,6 @@ class TitleSection(
 
 
     init {
-//        LayoutInflater.from(context).inflate(R.layout.title_section, this, true)
-//
-//        // Load attributes
-//        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CardTitleSection)
-//        val sectionTitle = typedArray.getString(R.styleable.CardTitleSection_sectionTitle)
-//        val seeAllText = typedArray.getString(R.styleable.CardTitleSection_seeAllText)
-//        typedArray.recycle()
-//
-//        // Set values to TextViews
-//        findViewById<TextView>(R.id.tvSectionTitle).text = sectionTitle
-//        findViewById<TextView>(R.id.tvSeeAll).text = seeAllText
-
 
         initView(attrs)
         initListener()

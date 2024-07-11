@@ -19,9 +19,13 @@
     <string name="see_all">See All</string>
     <string name="alley_palace">Alley Palace</string>
     <string name="recommended">Recommended</string>
+
+
+<!--    Dashboard LayoutTab-->
     <string name="location">Location</string>
     <string name="hotel">Hotel</string>
     <string name="food">Food</string>
     <string name="adventure">Adventure</string>
     <string name="visit">Visit</string>
+    <string name="tabPosition">Tab %d</string>
 </resources>

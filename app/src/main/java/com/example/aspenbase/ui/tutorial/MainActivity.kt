@@ -16,8 +16,7 @@ private val binding get() = _binding
         setContentView(binding?.root)
 
         binding?.btnExplore?.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java).apply {
-            })
+            startActivity(HomeActivity.createIntent(this))
         }
     }
 }

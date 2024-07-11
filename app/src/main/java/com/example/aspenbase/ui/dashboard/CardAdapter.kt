@@ -13,7 +13,7 @@ RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     internal var onClickItem: ((CardItem) -> Unit) = {}
 
-    internal var onClickFavorite: ((CardItem) -> Unit) = {}
+    internal var onClickFavorite: ((position:Int) -> Unit) = {}
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder =
@@ -39,13 +39,7 @@ RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
                 }
             }
             binding.imageButtonFavorite.setOnClickListener {
-                if (adapterPosition != RecyclerView.NO_POSITION) {
-
-                    val item = cardItemList[adapterPosition]
-                    item.isFavorite = !item.isFavorite
-                    onClickFavorite.invoke(item)
-                    notifyItemChanged(adapterPosition)
-                }
+               onClickFavorite(adapterPosition)
             }
         }
 
@@ -67,38 +61,3 @@ RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
         }
     }
 }
-
-//data class CardItem(
-//    val imageRes: Int,
-//    val title: String,
-//    val rating: Double,
-//    var isFavorite: Boolean = false
-//) : Parcelable {
-//    constructor(parcel: Parcel) : this(
-//        parcel.readInt(),
-//        parcel.readString() ?: "",
-//        parcel.readDouble(),
-//        parcel.readByte() != 0.toByte()
-//    )
-//
-//    override fun writeToParcel(parcel: Parcel, flags: Int) {
-//        parcel.writeInt(imageRes)
-//        parcel.writeString(title)
-//        parcel.writeDouble(rating)
-//        parcel.writeByte(if (isFavorite) 1 else 0)
-//    }
-//
-//    override fun describeContents(): Int {
-//        return 0
-//    }
-//
-//    companion object CREATOR : Parcelable.Creator<CardItem> {
-//        override fun createFromParcel(parcel: Parcel): CardItem {
-//            return CardItem(parcel)
-//        }
-//
-//        override fun newArray(size: Int): Array<CardItem?> {
-//            return arrayOfNulls(size)
-//        }
-//    }
-//}

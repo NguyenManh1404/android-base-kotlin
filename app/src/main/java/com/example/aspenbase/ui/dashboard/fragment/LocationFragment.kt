@@ -19,7 +19,7 @@ class LocationFragment : Fragment() {
     private var _binding: FragmentLocationBinding? = null
     private val binding get() = _binding
     private var popularList: MutableList<CardItem> = mutableListOf()
-    private var myAdapter: CardAdapter? = null
+    private var cardAdapter: CardAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,12 +32,25 @@ class LocationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initView()
         initListener()
     }
 
     private fun initView() {
+        initDummyData()
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        binding?.recyclerViewPopular?.run {
+            cardAdapter = CardAdapter(popularList)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = cardAdapter
+        }
+    }
+
+
+    private fun initDummyData() {
         popularList.run {
             add(CardItem(R.drawable.img_danang, "Home Stay", 4.1, true))
             add(CardItem(R.drawable.bg_welcome, "Alley Place", 5.0, true))
@@ -48,30 +61,27 @@ class LocationFragment : Fragment() {
             add(CardItem(R.drawable.img_danang, "Home Stay", 4.1))
             add(CardItem(R.drawable.bg_welcome, "Alley Place", 5.0))
         }
-
-
-        binding?.recyclerViewPopular?.run {
-            myAdapter = CardAdapter(popularList)
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = myAdapter
-        }
-
-        myAdapter?.notifyDataSetChanged()
     }
 
 
     private fun initListener() {
-        myAdapter?.onClickItem = {
-            Toast.makeText(context, "Its a toast! $it.title", Toast.LENGTH_SHORT).show()
 
-            (activity as HomeActivity).addDetailFragment(it)
+        cardAdapter?.run {
+            onClickItem = {
+                Toast.makeText(context, "Its a toast! $it.title", Toast.LENGTH_SHORT).show()
+                (activity as HomeActivity).addDetailFragment(it)
+            }
 
+            onClickFavorite = {position ->
+               popularList[position].run {
+                   isFavorite = !isFavorite
+               }
+                cardAdapter?.notifyDataSetChanged()
+
+                Toast.makeText(context, "Its a toast! Favorite ${popularList[position].title}", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
-
-        myAdapter?.onClickFavorite = {
-            Toast.makeText(context, "Its a toast! Favorite ${it.title}", Toast.LENGTH_SHORT).show()
-        }
-
 
     }
 

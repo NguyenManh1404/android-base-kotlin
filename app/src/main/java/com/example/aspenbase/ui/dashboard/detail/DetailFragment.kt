@@ -1,4 +1,4 @@
-package com.example.aspenbase.ui.detail
+package com.example.aspenbase.ui.dashboard.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,6 +16,7 @@ class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding
+    private var cardItem: CardItem? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,11 +43,9 @@ class DetailFragment : Fragment() {
     }
 
     private  fun initView (){
-        arguments?.let { bundle ->
-            val title = bundle.getString("title")
-            val imageRes = bundle.getInt("imageRes")
-            val rating = bundle.getDouble("rating")
-            val isFavorite = bundle.getBoolean("isFavorite")
+        cardItem = arguments?.getParcelable(KEY_CARD_ITEM)
+
+        cardItem?.run {
             val drawable = ContextCompat.getDrawable(requireContext(), imageRes)
 
             binding?.run {
@@ -54,8 +53,11 @@ class DetailFragment : Fragment() {
                 tvRating.text = rating.toString()
                 ivCard.setImageDrawable(drawable)
                 imageButtonFavorite.setImageResource(
-                    if (isFavorite) R.drawable.baseline_favorite
-                    else R.drawable.baseline_favorite_border
+                    if (isFavorite) {
+                        R.drawable.baseline_favorite
+                    } else {
+                        R.drawable.baseline_favorite_border
+                    }
                 )
             }
         }
@@ -87,16 +89,13 @@ class DetailFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(item: CardItem): DetailFragment {
-            val fragment = DetailFragment()
-            val bundle = Bundle().apply {
-                putString("title", item.title)
-                putInt("imageRes", item.imageRes)
-                putDouble("rating", item.rating)
-                putBoolean("isFavorite", item.isFavorite)
+
+        private  const val  KEY_CARD_ITEM = "key_card_item"
+
+        internal fun newInstance(item: CardItem): DetailFragment = DetailFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(KEY_CARD_ITEM, item)
             }
-            fragment.arguments = bundle
-            return fragment
         }
     }
 }
